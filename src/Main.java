@@ -6,7 +6,7 @@ public class Main {
         // We will write the code
         // all together
     }
-
+     //34
     // TO DO: funcEx1, funcEx2, funcEx3
     //        funcEx4, funcEx5, funcEx6
     //        funcEx7, funcEx8, funcEx9
