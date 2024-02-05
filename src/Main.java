@@ -8,7 +8,8 @@ public class Main {
     // TO DO: funcEx1, funcEx2, funcEx3
     //        funcEx4, funcEx5, funcEx6
     //        funcEx7, funcEx8, funcEx9
-    //        funcEx10, funcEx11, funcEx12
+    //        funcEx10(V), funcEx11(V), funcEx12(V)
+    // Tonny added function 10, 11, 12
 
     public static void print_CompoundInterest(int investment, int interest){
         final int FULL_YEAR = 12;
