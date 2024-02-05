@@ -7,10 +7,14 @@ public class Main {
         // all together
     }
 
-    // TO DO: funcEx1, funcEx2, funcEx3
-    //        funcEx4, funcEx5, funcEx6
-    //        funcEx7, funcEx8, funcEx9
-    //        funcEx10, funcEx11, funcEx12
+    // TO DO: funcEx1(V), funcEx2(V), funcEx3(V)
+    //        funcEx4(V), funcEx5(V), funcEx6(V)
+    //        funcEx7(V), funcEx8(V), funcEx9(V)
+    //        funcEx10(V), funcEx11(V), funcEx12(V)
+    // Tonny added function 10, 11, 12
+    // Daniel_D added function 7, 8, 9
+    // Nikolas added function 4,5,6
+    // Daniel_P added function 1,2,3
     public static void Circle(Scanner scanner) {
         System.out.println("Enter radius");
         float radius = scanner.nextFloat();
@@ -32,12 +36,19 @@ public class Main {
             System.out.println("The temperature in Celsius is " + temperature);
         }
     }
-    //        funcEx4(V), funcEx5(V), funcEx6(V)
-    //        funcEx7(V), funcEx8(V), funcEx9(V)
-    //        funcEx10(V), funcEx11(V), funcEx12(V)
-    // Tonny added function 10, 11, 12
-    // Daniel_D added function 7, 8, 9
-    // Nikolas added function 4,5,6
+    public static void Factorial(Scanner scanner) {
+        int num = 0;
+        while (num <= 0) {
+            System.out.println("Enter a positive number");
+            num = scanner.nextInt();
+        }
+        int result = 1;
+        for (int i = 1; i <= num; i++) {
+            result = result * i;
+        }
+        System.out.println("The factorial is " + result);
+    }
+
 
     public static int getInput(){
         Scanner scanner = new Scanner(System.in);
@@ -312,16 +323,5 @@ public class Main {
         return sumOfNumsToPowerOfNumbersCount;
     } // (*)A Function to help Function ( checkNarcissisticNumber() ↑)
 
-    public static void Factorial(Scanner scanner) {
-        int num = 0;
-        while (num <= 0) {
-            System.out.println("Enter a positive number");
-            num = scanner.nextInt();
-        }
-        int result = 1;
-        for (int i = 1; i <= num; i++) {
-            result = result * i;
-        }
-        System.out.println("The factorial is " + result);
-    }
+
 }
