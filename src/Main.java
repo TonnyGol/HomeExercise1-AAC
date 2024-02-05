@@ -7,6 +7,13 @@ public class Main {
         // all together
     }
 
+    // TO DO: funcEx1, funcEx2, funcEx3
+    //        funcEx4, funcEx5, funcEx6
+    //        funcEx7(V), funcEx8(V), funcEx9(V)
+    //        funcEx10(V), funcEx11(V), funcEx12(V)
+    // Tonny added function 10, 11, 12
+    // Daniel_D added function 7, 8, 9
+
     public static int getInput(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter a number: ");
@@ -106,11 +113,7 @@ public class Main {
         }
     }
 
-    // TO DO: funcEx1, funcEx2, funcEx3
-    //        funcEx4, funcEx5, funcEx6
-    //        funcEx7, funcEx8, funcEx9
-    //        funcEx10(V), funcEx11(V), funcEx12(V)
-    // Tonny added function 10, 11, 12
+
 
     public static void print_CompoundInterest(int investment, int interest){
         final int FULL_YEAR = 12;
