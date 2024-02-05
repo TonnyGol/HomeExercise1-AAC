@@ -6,6 +6,7 @@ public class Main {
             System.out.println("Enter a number");
             int firstNumber = scanner.nextInt();
             System.out.println(prime(firstNumber));
+            //
         }
 
         public static void naturalNumbers(int naturalNumber1, int naturalNumber2) {
