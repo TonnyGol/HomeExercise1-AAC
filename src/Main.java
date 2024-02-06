@@ -2,59 +2,108 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Starting point
-        // We will write the code
-        // all together
+        int userInput;
+        do{
+            printMenu();
+            userInput = getIntInput();
+            switch (userInput){
+                case 0 -> System.out.println("Goodbye :)");
+                case 1 -> calculate_Circle_AreaAndPerimeter();
+                case 2 -> convertBetween_CelsiusOrFahrenheit();
+                case 3 ->factorialCalculation();
+                case 4 -> System.out.println("Not Working Yet.");
+                case 5 -> System.out.println("Not Working Yet.");
+                case 6 -> System.out.println("Not Working Yet.");
+                case 7 -> printAllPrimeNumbersInRange();
+                case 8 -> print2NumbersGCD();
+                case 9 -> printQuadraticEquationCalculation();
+                case 10 -> print_CompoundInterest();
+                case 11 -> checkIfPartOfFibonacciSeries();
+                case 12 -> printMostClosestNarcissisticNumber();
+                default -> System.out.println("Error, you have entered wrong input.");
+            }
+        }while (userInput != 0);
+    }
+    // TO DO: Check Functions 4,5,6
+
+    // Checked Functions 1,2,3 / 7,8,9 / 10,11,12 (Names, functionality, Duplicate code....)
+    // Added function doPowCalculation() to EX12
+
+    public static int getIntInput(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+        return scanner.nextInt();
+    }
+    public static float getFloatInput(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+        return scanner.nextFloat();
     }
 
-    // TO DO: funcEx1(V), funcEx2(V), funcEx3(V)
-    //        funcEx4(V), funcEx5(V), funcEx6(V)
-    //        funcEx7(V), funcEx8(V), funcEx9(V)
-    //        funcEx10(V), funcEx11(V), funcEx12(V)
-    // Tonny added function 10, 11, 12
-    // Daniel_D added function 7, 8, 9
-    // Nikolas added function 4,5,6
-    // Daniel_P added function 1,2,3
-    public static void Circle(Scanner scanner) {
-        System.out.println("Enter radius");
-        float radius = scanner.nextFloat();
-        float S = (float) (Math.PI * Math.pow(radius, 2));
-        float P = (float) (2 * Math.PI * radius);
-        System.out.println("The area is" + S);
-        System.out.println("The perimeter is" + P);
+    //------------------------------------------------------------------------------------------------------------------
+
+    public static void printMenu(){
+        System.out.println("--------------------------------------");
+        System.out.println("0. End run");
+        System.out.println("1. Calculate Rectangles Area and Scope");
+        System.out.println("2. Calculate Celsius or Fahrenheit inversion (c->f, f->c)");
+        System.out.println("3. Print Assembly of a number");
+        System.out.println("4. Print sum of numbers in range");
+        System.out.println("5. Print if a number is Primary or not");
+        System.out.println("6. Print if a number is Palindrome or not");
+        System.out.println("7. Print Primary numbers in range");
+        System.out.println("8. Calculate GCD of 2 numbers");
+        System.out.println("9. Calculate Quadratic Equation (ax^2 + bx + c)");
+        System.out.println("10. Calculate Compound Interest");
+        System.out.println("11. Check if a number is part of Fibonacci series");
+        System.out.println("12. Print Narcissistic number");
+        System.out.println("--------------------------------------");
     }
-    public static void Temperature(Scanner scanner) {
-        System.out.println("Enter temperature type: Celsius or Fahrenheit");
-        String temperatureType = scanner.next();
+
+    //------------------------------------------------------------------------------------------------------------------
+
+    public static void calculate_Circle_AreaAndPerimeter() {
+        System.out.println("Circle calculation selected - radius required,");
+        float radius = getFloatInput();
+        float area = (float) (3.14 * (radius * radius));
+        float perimeter = (float) (2 * 3.14 * radius);
+        System.out.println("The area is: " + area);
+        System.out.println("The perimeter is: " + perimeter);
+    } // Func_EX1
+
+    //------------------------------------------------------------------------------------------------------------------
+
+    public static void convertBetween_CelsiusOrFahrenheit() {
+        System.out.println("Enter temperature type - Celsius (1) or Fahrenheit (2)");
+        int temperatureType = getIntInput();
         System.out.println("Enter temperature");
-        float temperature = scanner.nextFloat();
-        if (temperatureType.equals("Celsius")) {
-            temperature = (float) (temperature * 33.8);
-            System.out.println("The temperature in Fahrenheit is " + temperature);
+        float temperature = getIntInput();
+        if (temperatureType == 1) {
+            temperature = (temperature * 1.8F) + 32;
+            System.out.println("The temperature in Fahrenheit is: " + temperature);
         } else {
-            temperature = (float) (temperature / 33.8);
-            System.out.println("The temperature in Celsius is " + temperature);
+            temperature = (temperature - 32)/1.8F;
+            System.out.println("The temperature in Celsius is: " + temperature);
         }
-    }
-    public static void Factorial(Scanner scanner) {
+    } // Func_EX2
+
+    //------------------------------------------------------------------------------------------------------------------
+
+    public static void factorialCalculation() {
         int num = 0;
         while (num <= 0) {
-            System.out.println("Enter a positive number");
-            num = scanner.nextInt();
+            System.out.println("Enter a positive number,");
+            num = getIntInput();
         }
         int result = 1;
         for (int i = 1; i <= num; i++) {
             result = result * i;
         }
-        System.out.println("The factorial is " + result);
-    }
+        System.out.println("The factorial is: " + result);
+    } // Func_EX3
 
+    //------------------------------------------------------------------------------------------------------------------
 
-    public static int getInput(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a number: ");
-        return scanner.nextInt();
-    }
     public static void naturalNumbers(int naturalNumber1, int naturalNumber2) {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
@@ -63,7 +112,7 @@ public class Main {
             naturalNumber1 = scanner.nextInt();
             naturalNumber2 = scanner.nextInt();
         }
-        for (int i = naturalNumber1; i <= naturalNumber2; i++) {
+        for (int i = naturalNumber1; i <= naturalNumber2; i++) {             // does not print if I give the function 10, 5
             sum = sum + i;
         }
         System.out.println(sum);
@@ -139,28 +188,28 @@ public class Main {
         return array = true;
     }
 
-    // Case 7
+    //------------------------------------------------------------------------------------------------------------------
 
     public static void printAllPrimeNumbersInRange(){
-        System.out.println("Prime numbers in range selected,");
-        System.out.println("2 numbers required for range. ");
-        int start = getInput();
-        int end = getInput();
-        printPrimeNumbersInRange(start, end);
-    }
-    public static void printPrimeNumbersInRange(int start, int end){
         boolean foundPrime = false;
+        System.out.println("Prime numbers in range selected,");
+        System.out.println("2 numbers required for range.");
+        int start = getIntInput();
+        int end = getIntInput();
+
         for (int i = start; i<= end; i++){
             if (checkIfPrimeNumber(i)){
-                System.out.print(i + ", ");
+                System.out.print(i + " ");
                 foundPrime = true;
             }
         }
-        if (!foundPrime){
-            System.out.println("No Prime numbers found in range. ");
-        }
-    }
 
+        if (!foundPrime){
+            System.out.println("No Prime numbers found in range.");
+        }
+
+        System.out.println();
+    } // Func_EX7
     public static boolean checkIfPrimeNumber(int number){
         boolean isPrimeNumber = false;
         for (int i = 1; i<=number; i++){
@@ -174,22 +223,24 @@ public class Main {
             }
         }
         return isPrimeNumber;
-    }
+    } // Remove later when FuncEX 5 fixed.
 
-    // Case 8
+    //------------------------------------------------------------------------------------------------------------------
 
-    public static void calculate2NumbersGCD(){
+    public static void print2NumbersGCD(){
         System.out.println("Find GCD selected,");
         System.out.println("2 numbers required for GCD.");
-        int num1 = getInput();
-        int num2 = getInput();
-        if(num1>num2) {
-            System.out.println("The GCD is: " + findGCDFor2Numbers(num2, num1));
-        } else {
-            System.out.println("The GCD is: " + findGCDFor2Numbers(num1, num2));
+        int num1 = getIntInput();
+        int num2 = getIntInput();
+        System.out.println("The GCD is: " + calculateGCDFor2Numbers(num1, num2));
+    } // Func_EX8
+    public static int calculateGCDFor2Numbers(int smallerNum, int biggerNum){
+        int tempNumber;
+        if(smallerNum > biggerNum){
+            tempNumber = smallerNum;
+            smallerNum = biggerNum;
+            biggerNum = tempNumber;
         }
-    }
-    public static int findGCDFor2Numbers(int smallerNum, int biggerNum){
         int currentGCD = 1;
         for (int i = 1; i<=biggerNum; i++){
             if ((biggerNum % i == 0) && (smallerNum % i == 0)){
@@ -202,21 +253,20 @@ public class Main {
         return currentGCD;
     }
 
-    // Case 9
+    //------------------------------------------------------------------------------------------------------------------
 
-    public static void calculateQuadraticEquation(){
+    public static void printQuadraticEquationCalculation(){
         System.out.println("Quadratic Equation calculation selected,");
-        int a, b, c;
-        System.out.println("Number for a: ");
-        a = getInput();
-        System.out.println("Number for b: ");
-        b = getInput();
-        System.out.println("Number for c: ");
-        c = getInput();
+        float a, b, c;
+        System.out.println("Number for a, ");
+        a = getFloatInput();
+        System.out.println("Number for b, ");
+        b = getFloatInput();
+        System.out.println("Number for c, ");
+        c = getFloatInput();
         calculateQuadraticEquation(a, b, c);
-    }
-
-    public static void calculateQuadraticEquation(int a, int b, int c) {
+    } // Func_EX9
+    public static void calculateQuadraticEquation(float a, float b, float c) {
         double discriminant = (b * b) - 4 * a * c;
         if (discriminant < 0) {
             System.out.println("No real solution for equation.");
@@ -232,11 +282,17 @@ public class Main {
         }
     }
 
+    //------------------------------------------------------------------------------------------------------------------
 
-
-    public static void print_CompoundInterest(int investment, int interest){
+    public static void print_CompoundInterest(){
         final int FULL_YEAR = 12;
         final int FULL_3_YEARS = 36;
+
+        System.out.println("Investment amount");
+        int investment = getIntInput();
+        System.out.println("Interest percentage");
+        int interest = getIntInput();
+
         float halfAmountInvestment;
         float newInvestment = investment;
 
@@ -250,15 +306,18 @@ public class Main {
             }
         }
 
-    } // Func_EX10 Finished (V)
+    } // Func_EX10
 
     //------------------------------------------------------------------------------------------------------------------
 
-    public static boolean checkIfPartOfFibonacciSeries(int number){
+    public static void checkIfPartOfFibonacciSeries(){
+        System.out.println("Check if a number is part of Fibonacci series");
         boolean isPartOfFibonacciSeries = false;
         int fibonacciNum = 0;
         int tempNum1 = 0;
         int tempNum2 = 1;
+
+        int number = getIntInput();
 
         while (fibonacciNum < number){
             fibonacciNum = tempNum1 + tempNum2;
@@ -269,23 +328,29 @@ public class Main {
                 break;
             }
         }
-        return isPartOfFibonacciSeries;
-    } // Func_EX11 Finished (V)
+        if(isPartOfFibonacciSeries){
+            System.out.println("The number " + number + " is part of Fibonacci Series");
+        }else {
+            System.out.println("The number " + number + " is not part of Fibonacci Series :( ....");
+        }
+    } // Func_EX11
 
     //------------------------------------------------------------------------------------------------------------------
 
-    public static void printMostClosestNarcissisticNumber(int number){
+    public static void printMostClosestNarcissisticNumber(){
+        System.out.println("Print closest Narcissistic Number");
+        int number = getIntInput();
         int closeNarcissistNumber1 = number;
         int closeNarcissistNumber2 = number;
         int mostCloseNarcissistNumber;
 
-        if(checkNarcissisticNumber(number)){
+        if(checkIfNarcissisticNumber(number)){
             System.out.println("Closest Narcissistic number: "+number);
         } else{
-            while (!checkNarcissisticNumber(closeNarcissistNumber1)){
+            while (!checkIfNarcissisticNumber(closeNarcissistNumber1)){
                 closeNarcissistNumber1++;
             }
-            while (!checkNarcissisticNumber(closeNarcissistNumber2)){
+            while (!checkIfNarcissisticNumber(closeNarcissistNumber2)){
                 closeNarcissistNumber2--;
             }
 
@@ -298,12 +363,12 @@ public class Main {
                 System.out.println("Closest Narcissistic number: "+mostCloseNarcissistNumber);
             }
         }
-    } // Func_EX12 Finished (V)
-    public static boolean checkNarcissisticNumber(int number){
+    } // Func_EX12
+    public static boolean checkIfNarcissisticNumber(int number){
         int lengthOfNumber;
         double sumOfNumsToPowerOfNumbersCount;
         lengthOfNumber = getLengthOfNumber(number);
-        sumOfNumsToPowerOfNumbersCount = getCalculationOfNumsInPowerOfNumbersLength(number, lengthOfNumber);
+        sumOfNumsToPowerOfNumbersCount = doPowCalculationOnAllNumbers(number, lengthOfNumber);
         return number == sumOfNumsToPowerOfNumbersCount;
     } // (*)A Function to help Function of EX12
     public static int getLengthOfNumber(int number){
@@ -313,15 +378,20 @@ public class Main {
             number = number / 10;
         }
         return numbersCountInNum;
-    } // (*)A Function to help Function ( checkNarcissisticNumber() ↑)
-    public static double getCalculationOfNumsInPowerOfNumbersLength(int number, int numbersCountInNum){
+    } //Supporting function to - checkNarcissisticNumber()
+    public static double doPowCalculationOnAllNumbers(int number, int numbersCountInNum){
         double sumOfNumsToPowerOfNumbersCount = 0;
         while (number > 0){
-            sumOfNumsToPowerOfNumbersCount += Math.pow(number % 10, numbersCountInNum);
+            sumOfNumsToPowerOfNumbersCount += doPowCalculation(number % 10, numbersCountInNum);
             number = number / 10;
         }
         return sumOfNumsToPowerOfNumbersCount;
-    } // (*)A Function to help Function ( checkNarcissisticNumber() ↑)
-
-
+    } //Supporting function to - checkNarcissisticNumber()
+    public static double doPowCalculation(int base, int exponent){
+        double result = 1;
+        for (int i = 0; i < exponent; i++){
+            result = result * base;
+        }
+        return result;
+    } //Supporting function to - doPowCalculationOnAllNumbers()
 }
