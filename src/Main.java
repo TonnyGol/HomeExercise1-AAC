@@ -10,10 +10,10 @@ public class Main {
                 case 0 -> System.out.println("Goodbye :)");
                 case 1 -> calculate_Circle_AreaAndPerimeter();
                 case 2 -> convertBetween_CelsiusOrFahrenheit();
-                case 3 ->factorialCalculation();
-                case 4 -> naturalNumbers();
-                case 5 -> prime();
-                case 6 -> palindromeTest();
+                case 3 -> factorialCalculation();
+                case 4 -> printNaturalNumbersInRange();
+                case 5 -> printPrimeOrNot();
+                case 6 -> checkPalindromeOrNot();
                 case 7 -> printAllPrimeNumbersInRange();
                 case 8 -> print2NumbersGCD();
                 case 9 -> printQuadraticEquationCalculation();
@@ -100,7 +100,7 @@ public class Main {
 
     //------------------------------------------------------------------------------------------------------------------
 
-    public static void naturalNumbers() {
+    public static void printNaturalNumbersInRange() {
         System.out.println("Two numbers required");
         int naturalNumber1 = getIntInput();
         int naturalNumber2 = getIntInput();
@@ -122,7 +122,7 @@ public class Main {
         System.out.println(sum);
     }
     //------------------------------------------------------------------------------------------------------------------
-    public static void prime() {
+    public static void printPrimeOrNot() {
         System.out.println("Prime number check");
         boolean prime = true;
         int primeNum = getIntInput();
@@ -139,7 +139,7 @@ public class Main {
         System.out.println(prime);
     }
     //------------------------------------------------------------------------------------------------------------------
-    public static void palindromeTest (){
+    public static void checkPalindromeOrNot (){
         System.out.println("Palindrome number test");
         boolean palindrome = false;
         int num = getIntInput();
@@ -199,7 +199,7 @@ public class Main {
             }
         }
         return isPrimeNumber;
-    } // Remove later when FuncEX 5 fixed.
+    }
 
     //------------------------------------------------------------------------------------------------------------------
 
