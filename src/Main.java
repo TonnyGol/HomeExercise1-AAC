@@ -11,7 +11,7 @@ public class Main {
                 case 1 -> calculate_Circle_AreaAndPerimeter();
                 case 2 -> convertBetween_CelsiusOrFahrenheit();
                 case 3 -> factorialCalculation();
-                case 4 -> printNaturalNumbersInRange();
+                case 4 -> printNaturalNumbersSumInRange();
                 case 5 -> printPrimeOrNot();
                 case 6 -> checkPalindromeOrNot();
                 case 7 -> printAllPrimeNumbersInRange();
@@ -24,7 +24,8 @@ public class Main {
             }
         }while (userInput != 0);
     }
-    // Checked Functions 4,5,6 (Names, functionality, Duplicate code....)
+    // Test all functions and fix text.
+
     public static int getIntInput(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter a number: ");
@@ -41,18 +42,18 @@ public class Main {
     public static void printMenu(){
         System.out.println("--------------------------------------");
         System.out.println("0. End run");
-        System.out.println("1. Calculate Rectangles Area and Scope");
-        System.out.println("2. Calculate Celsius or Fahrenheit inversion (c->f, f->c)");
-        System.out.println("3. Print Assembly of a number");
-        System.out.println("4. Print sum of numbers in range");
-        System.out.println("5. Print if a number is Primary or not");
-        System.out.println("6. Print if a number is Palindrome or not");
-        System.out.println("7. Print Primary numbers in range");
+        System.out.println("1. Calculate Circle Area and Perimeter");
+        System.out.println("2. Convert between Celsius and Fahrenheit (c->f, f->c)");
+        System.out.println("3. Print Factorial of a number");
+        System.out.println("4. Print sum of natural numbers in range");
+        System.out.println("5. Check if a number is Primary or not");
+        System.out.println("6. Check if a number is Palindrome or not");
+        System.out.println("7. Print all Primary numbers in range");
         System.out.println("8. Calculate GCD of 2 numbers");
         System.out.println("9. Calculate Quadratic Equation (ax^2 + bx + c)");
         System.out.println("10. Calculate Compound Interest");
         System.out.println("11. Check if a number is part of Fibonacci series");
-        System.out.println("12. Print Narcissistic number");
+        System.out.println("12. Print closest Narcissistic number");
         System.out.println("--------------------------------------");
     }
 
@@ -100,14 +101,14 @@ public class Main {
 
     //------------------------------------------------------------------------------------------------------------------
 
-    public static void printNaturalNumbersInRange() {
+    public static void printNaturalNumbersSumInRange() {
         System.out.println("Two numbers required");
         int naturalNumber1 = getIntInput();
         int naturalNumber2 = getIntInput();
         int sum = 0;
         int temp;
         while (naturalNumber1 == naturalNumber2) {
-            System.out.println("Error, Please enter a new number");
+            System.out.println("Error, please enter 2 different numbers.");
             naturalNumber1 = getIntInput();
             naturalNumber2 = getIntInput();
         }
@@ -120,8 +121,10 @@ public class Main {
             sum = sum + i;
         }
         System.out.println(sum);
-    }
+    } // Func_EX4
+
     //------------------------------------------------------------------------------------------------------------------
+
     public static void printPrimeOrNot() {
         System.out.println("Prime number check");
         boolean prime = true;
@@ -137,8 +140,10 @@ public class Main {
             }
         }
         System.out.println(prime);
-    }
+    } // Func_EX5
+
     //------------------------------------------------------------------------------------------------------------------
+
     public static void checkPalindromeOrNot (){
         System.out.println("Palindrome number test");
         boolean palindrome = false;
@@ -153,7 +158,7 @@ public class Main {
             palindrome = true;
         }
         System.out.println(palindrome);
-    }
+    } // Func_EX6
     public static int mirroredNumbers (int num){
         int newNum = 0;
         int tempNum = num;
@@ -164,6 +169,7 @@ public class Main {
         }
         return newNum;
     }
+
     //------------------------------------------------------------------------------------------------------------------
 
     public static void printAllPrimeNumbersInRange(){
@@ -307,7 +313,7 @@ public class Main {
         if(isPartOfFibonacciSeries){
             System.out.println("The number " + number + " is part of Fibonacci Series");
         }else {
-            System.out.println("The number " + number + " is not part of Fibonacci Series :( ....");
+            System.out.println("The number " + number + " is not part of Fibonacci Series.");
         }
     } // Func_EX11
 
